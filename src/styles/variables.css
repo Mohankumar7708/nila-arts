@@ -1,0 +1,40 @@
+
+:root {
+  /* Nila Arts - New Brand Identity */
+  --color-primary: #102D32;
+  --color-primary-dark: #091F23;
+  --color-secondary: #E9DFCE;
+  --color-accent: #D97860;
+  --color-background: #F7F4ED;
+  --color-surface: #FFFFFF;
+
+  /* Semantic colors */
+  --color-ivory: #F7F4ED;
+  --color-cream: #E9DFCE;
+  --color-plum: #102D32;
+  --color-plum-dark: #091F23;
+  --color-terracotta: #D97860;
+  --color-gold: #C4A66A;
+
+  --color-text: #202C2D;
+  --color-text-light: #737C78;
+  --color-white: #FFFFFF;
+
+  /* Typography */
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Manrope", sans-serif;
+  --font-artistic: "Cormorant Garamond", serif;
+
+  /* Layout */
+  --container-width: 1320px;
+  --section-padding: 120px;
+
+  /* Interactions */
+  --transition-smooth: 0.5s cubic-bezier(.2,.8,.2,1);
+  --shadow-soft: 0 15px 45px rgba(16,45,50,.08);
+  --shadow-hover: 0 25px 65px rgba(16,45,50,.16);
+
+  --radius-small: 8px;
+  --radius-medium: 18px;
+  --radius-large: 30px;
+}

@@ -1,0 +1,512 @@
+
+/* ==========================================
+   NILA ARTS - PREMIUM VIDEO PRELOADER
+   Theme: Blush Pink | Plum | Rose Gold
+========================================== */
+
+.video-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  padding: 30px 20px;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 40%,
+      #fff5f1 0%,
+      transparent 65%
+    ),
+    linear-gradient(
+      135deg,
+      #f5dce3,
+      #f9e9e3 48%,
+      #e9d5e7
+    );
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+
+/* Fade out when video finishes */
+
+.video-preloader.intro-exiting {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.intro-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 850px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==========================================
+   BRAND LOGO AND WELCOME TEXT
+========================================== */
+
+.intro-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+  margin-bottom: 27px;
+
+  text-align: left;
+}
+
+.intro-brand img {
+  width: 78px;
+  height: 78px;
+
+  object-fit: contain;
+}
+
+.intro-brand h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  font-weight: 600;
+
+  color: #49253e;
+}
+
+.intro-brand p {
+  margin-top: 5px;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 3px;
+
+  color: #b4777e;
+}
+
+/* ==========================================
+   VIDEO FRAME
+========================================== */
+
+.intro-video-frame {
+  position: relative;
+
+  width: min(100%, 850px);
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+  background: #edcbd1;
+
+  border: 5px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 25px 60px rgba(91, 43, 70, 0.15),
+    0 5px 18px rgba(91, 43, 70, 0.08);
+}
+
+/* Video zoom to crop the bottom-right watermark.
+   Note: This also trims a small part of the original video. */
+
+.welcome-video {
+  display: block;
+
+  width: 106%;
+  height: 106%;
+  max-width: none;
+
+  object-fit: cover;
+  object-position: left top;
+
+  background: #edcbd1;
+}
+
+/* ==========================================
+   PROGRESS SECTION
+========================================== */
+
+.intro-progress-section {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.intro-progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 10px;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+
+  color: #79546b;
+}
+
+.intro-progress-info span:last-child {
+  color: #a84f73;
+  font-weight: 800;
+
+  font-variant-numeric: tabular-nums;
+}
+
+/* Progress background */
+
+.intro-progress-track {
+  width: 100%;
+  height: 8px;
+
+  background: rgba(132, 75, 105, 0.14);
+
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+/* Actual video progress */
+
+.intro-progress-fill {
+  width: 0;
+  height: 100%;
+
+  border-radius: 30px;
+
+  background: linear-gradient(
+    90deg,
+    #b65d83,
+    #e89b9e,
+    #d6a66c
+  );
+
+  transition: width 0.15s linear;
+}
+
+/* Footer message */
+
+.intro-footer-text {
+  margin-top: 16px;
+
+  text-align: center;
+
+  color: #997486;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  font-style: italic;
+}
+
+/* ==========================================
+   BACKGROUND DECORATIONS
+========================================== */
+
+.intro-decoration {
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+  filter: blur(75px);
+
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.intro-decoration-one {
+  background: #ed9eb6;
+
+  top: -100px;
+  left: -100px;
+}
+
+.intro-decoration-two {
+  background: #a981bd;
+
+  right: -100px;
+  bottom: -120px;
+}
+
+/* ==========================================
+   HOMEPAGE VISIBILITY
+========================================== */
+
+.website-hidden {
+  visibility: hidden;
+}
+
+.website-visible {
+  visibility: visible;
+
+  animation: homepage-reveal 0.8s ease both;
+}
+
+@keyframes homepage-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 600px) {
+  .video-preloader {
+    padding: 20px 14px;
+  }
+
+  .intro-brand {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .intro-brand img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .intro-brand h2 {
+    font-size: 24px;
+  }
+
+  .intro-brand p {
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+
+  .intro-video-frame {
+    border-radius: 14px;
+    border-width: 3px;
+  }
+
+  .intro-progress-section {
+    margin-top: 18px;
+  }
+
+  .intro-footer-text {
+    font-size: 14px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .video-preloader,
+  .website-visible {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ==========================================
+   NILA ARTS - ANIMATED ART STUDIO BACKGROUND
+========================================== */
+
+.video-preloader {
+  isolation: isolate;
+}
+
+/* Floating paint drops */
+
+.video-preloader::before,
+.video-preloader::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-repeat: repeat;
+}
+
+.video-preloader::before {
+  opacity: .75;
+  background-image:
+    radial-gradient(ellipse, #e87991 0 4px, transparent 5px),
+    radial-gradient(ellipse, #f2bd59 0 5px, transparent 6px),
+    radial-gradient(ellipse, #8e78b7 0 4px, transparent 5px),
+    radial-gradient(ellipse, #78a98a 0 5px, transparent 6px);
+  background-size: 190px 260px, 240px 310px, 280px 350px, 330px 290px;
+  background-position: 10px -250px, 80px -100px, 150px -300px, 220px -180px;
+  animation: paint-rain 12s linear infinite;
+}
+
+.video-preloader::after {
+  opacity: .45;
+  background-image:
+    radial-gradient(circle, #e87991 0 3px, transparent 4px),
+    radial-gradient(circle, #f2bd59 0 3px, transparent 4px),
+    radial-gradient(circle, #78a98a 0 3px, transparent 4px);
+  background-size: 260px 230px, 310px 280px, 370px 330px;
+  background-position: 40px -150px, 160px -300px, 250px -100px;
+  animation: paint-rain 17s linear infinite reverse;
+}
+
+@keyframes paint-rain {
+  from {
+    background-position:
+      10px -300px,
+      80px -350px,
+      150px -400px,
+      220px -250px;
+  }
+  to {
+    background-position:
+      80px 1100px,
+      150px 1050px,
+      220px 1200px,
+      290px 1000px;
+  }
+}
+
+/* Decorative paint splashes */
+
+.paint-decoration {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  font-size: 34px;
+  animation: paint-float 5s ease-in-out infinite;
+}
+
+.paint-decoration-one {
+  left: 7%;
+  top: 18%;
+  color: #e87991;
+}
+
+.paint-decoration-two {
+  right: 8%;
+  top: 22%;
+  color: #d6a66c;
+  animation-delay: 1s;
+}
+
+.paint-decoration-three {
+  left: 10%;
+  bottom: 17%;
+  color: #8e78b7;
+  animation-delay: 2s;
+}
+
+.paint-decoration-four {
+  right: 10%;
+  bottom: 15%;
+  color: #78a98a;
+  animation-delay: 1.5s;
+}
+
+@keyframes paint-float {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg) scale(1);
+  }
+  50% {
+    transform: translateY(-22px) rotate(15deg) scale(1.15);
+  }
+}
+
+/* Colourful brush-stroke decorations */
+
+.paint-stroke {
+  position: absolute;
+  z-index: 0;
+  width: 150px;
+  height: 15px;
+  border-radius: 50%;
+  opacity: .28;
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.paint-stroke-one {
+  top: 14%;
+  left: -35px;
+  background: #e87991;
+  transform: rotate(-25deg);
+  animation: stroke-move 7s ease-in-out infinite;
+}
+
+.paint-stroke-two {
+  bottom: 13%;
+  right: -30px;
+  background: #8e78b7;
+  transform: rotate(-25deg);
+  animation: stroke-move 8s ease-in-out infinite reverse;
+}
+
+.paint-stroke-three {
+  top: 72%;
+  left: 5%;
+  background: #f2bd59;
+  transform: rotate(18deg);
+  animation: stroke-move 9s ease-in-out infinite;
+}
+
+@keyframes stroke-move {
+  0%, 100% {
+    transform: translateX(0) rotate(-20deg);
+  }
+  50% {
+    transform: translateX(30px) rotate(10deg);
+  }
+}
+
+/* Keep video and progress above decorations */
+
+.intro-content {
+  z-index: 3;
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 600px) {
+  .paint-decoration {
+    font-size: 23px;
+  }
+
+  .paint-stroke {
+    width: 85px;
+    height: 10px;
+  }
+}
+
+/* Respect reduced-motion settings */
+
+@media (prefers-reduced-motion: reduce) {
+  .video-preloader::before,
+  .video-preloader::after,
+  .paint-decoration,
+  .paint-stroke {
+    animation: none !important;
+  }
+}
